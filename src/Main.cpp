@@ -4,7 +4,7 @@
 
 int main()
 {
-	std::cout << "boost169" << std::endl;
+	std::cout << "boost test" << std::endl;
 
 	auto fx = [](int x) {
 		for (int i = 0; i < x; ++i) {
@@ -13,11 +13,11 @@ int main()
 		}
 	};
 
-	auto& exe1 = ExecutorManager().instance().createExecutor("myExe1");
-	exe1.execute(fx, 3);
+	auto& exe1 = ExecutorManager::instance().createExecutor("Exe #1");
+	exe1.execute(fx, 2);
 
-	auto& exe2 = ExecutorManager().instance().createExecutor("Exe #2");
-	exe2.execute(fx, 5);
+	auto& exe2 = ExecutorManager::instance().createExecutor("Exe #2");
+	exe2.execute(fx, 4);
 
 
 	std::cout << "Main Done." << std::endl;

@@ -19,5 +19,5 @@ Executor::~Executor()
 void Executor::execute(const tJOBFUNC& pJob, int x)
 {
 	boost::asio::post(mPool, std::bind(pJob, x));
-	std::cout << mName << " mCnt=" << mCnt << std::endl;
+	std::cout << mName << " mCnt=" << ++mCnt << std::endl;
 }
